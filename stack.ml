@@ -6,6 +6,10 @@ module MyStack = struct
 
     let empty = Empty
 
+    let isempty = function
+        | Empty -> true
+        | _ -> false
+
     let push x s = 
         Entry (x, s)
 
@@ -28,6 +32,9 @@ module ListStack = struct
 
     let empty = []
 
+    let isempty s = 
+        s = []
+    
     let push x s = 
         x :: s
 
@@ -44,6 +51,7 @@ module ListStack = struct
 end
 
 let s = MyStack.empty
+let check = MyStack.isempty
 let s = MyStack.push 1 s
 let s = MyStack.push 2 s
 let s = MyStack.push 3 s
@@ -57,6 +65,7 @@ let x = MyStack.top s
 let l = MyStack.size s
 
 let s = ListStack.empty
+let check = MyStack.isempty
 let s = ListStack.push 1 s
 let s = ListStack.push 2 s
 let s = ListStack.push 3 s
