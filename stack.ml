@@ -16,6 +16,10 @@ module MyStack = struct
     let pop = function
         | Empty -> failwith "Empty stack"
         | Entry (_,s) -> s
+
+    let rec size = function
+        | Entry(_, t) -> 1 + (size t) 
+        | Empty -> 0
 end
 
 (* Make stack using List *)
@@ -34,6 +38,9 @@ module ListStack = struct
     let pop = function
         | [] -> failwith "Empty stack"
         | _ :: s -> s
+
+    let size s = 
+        List.length s
 end
 
 let s = MyStack.empty
@@ -47,6 +54,7 @@ let s = MyStack.pop s
 let s = MyStack.pop s
 let s = MyStack.push 10 s
 let x = MyStack.top s
+let l = MyStack.size s
 
 let s = ListStack.empty
 let s = ListStack.push 1 s
@@ -59,3 +67,4 @@ let s = ListStack.pop s
 let s = ListStack.pop s
 let s = ListStack.push 10 s
 let x = ListStack.top s
+let l = ListStack.size s
