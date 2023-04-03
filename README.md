@@ -23,6 +23,9 @@ Lazy evaluation, on the other hand, delays the evaluation of expressions until t
 ## Functional Data Structures
 * No mutable updates: operations take an "old" value and return new value.
 * Functional data structures are persistent rather than ephemeral [^1].
+* Efficiency and Complexity
+  * In general, persistent data structures tend to have higher time and space complexity than their mutable counterparts due to the need to maintain multiple versions  of the data structure.
+  *  However, some persistent data structures can have performance comparable to their mutable counterparts in many cases due to the garbage collectors present in Ocaml.
 
 [^1]: Functional data structures are persistent because they are designed to be immutable, meaning that any operation that modifies the data structure creates a new version of it while leaving the original version intact. This allows for all previous versions to be accessible even after new versions have been created, making them persistent. In contrast, ephemeral data structures are mutable and do not retain previous versions.
 
