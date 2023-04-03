@@ -20,6 +20,12 @@ Strict evaluation, also known as eager evaluation, evaluates expressions as soon
 
 Lazy evaluation, on the other hand, delays the evaluation of expressions until they are needed. This means that expressions are only evaluated when their results are required to compute the output of a function.
 
-## Stack
+## Functional Data Structures
+* No mutable updates: operations take an "old" value and return new value.
+* Functional data structures are persistent rather than ephemeral [^1].
+
+[^1]: Functional data structures are persistent because they are designed to be immutable, meaning that any operation that modifies the data structure creates a new version of it while leaving the original version intact. This allows for all previous versions to be accessible even after new versions have been created, making them persistent. In contrast, ephemeral data structures are mutable and do not retain previous versions.
+
+### Stack
 We have attempted to implement all the major functions of a stack data structure, as outlined in the given link, using two methods: utilizing the inbuilt data structure "list", and creating a stack from scratch.
 [C++ Stack](https://www.geeksforgeeks.org/stack-in-cpp-stl/)
