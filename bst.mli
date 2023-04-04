@@ -4,4 +4,5 @@ sig
     val empty : 'a tree
     val mem : 'a -> 'a tree -> bool
     val insert : 'a -> 'a tree -> 'a tree
+    val height : 'a tree -> int
 end

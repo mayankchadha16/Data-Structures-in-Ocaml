@@ -19,12 +19,20 @@ module MyBST = struct
       if x < y then Node (y, insert x l, r)
       else if x > y then Node (y, l, insert x r)
       else t
+
+  let rec height = function  
+    | Leaf -> 0
+    | Node (_, left, right) -> 1 + max (height left) (height right)
 end
 
 let s = MyBST.empty
+let h = MyBST.height s
 let s = MyBST.insert 3 s
 let s = MyBST.insert 2 s
+let h = MyBST.height s
 let s = MyBST.insert 1 s
+let h = MyBST.height s
 let s = MyBST.insert 5 s
+let h = MyBST.height s
 let check = MyBST.mem 3 s
 let check = MyBST.mem 8 s
