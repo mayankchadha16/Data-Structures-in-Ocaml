@@ -30,5 +30,10 @@ Lazy evaluation, on the other hand, delays the evaluation of expressions until t
 [^1]: Functional data structures are persistent because they are designed to be immutable, meaning that any operation that modifies the data structure creates a new version of it while leaving the original version intact. This allows for all previous versions to be accessible even after new versions have been created, making them persistent. In contrast, ephemeral data structures are mutable and do not retain previous versions.
 
 ### Stack
-We have attempted to implement all the major functions of a stack data structure, as outlined in the given link, using two methods: utilizing the inbuilt data structure "list", and creating a stack from scratch.
-[C++ Stack](https://www.geeksforgeeks.org/stack-in-cpp-stl/)
+We have attempted to implement all the major functions of a stack data structure, as outlined in the given [link](https://www.geeksforgeeks.org/stack-in-cpp-stl/), using two methods: utilizing the inbuilt data structure "list", and creating a stack from scratch.
+
+### Binary Search Tree (BST)
+We have attempted to implement all the major functions of the binary search tree, as outlined in the given [link](https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/), from scratch. However, in some cases, binary search tree can take the same amount of time O(n) as linear search, so we need to modify our implementation accordingly.
+
+#### Plan
+We need to modify our BST implementation to handle the worst-case scenario where the tree degenerates into a linked list. By using a balancing algorithm such as AVL or Red-Black, we can ensure that our implementation always has a worst-case time complexity of O(log n) for search, insertion, and deletion operations.
