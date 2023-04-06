@@ -23,16 +23,22 @@ module MyBST = struct
   let rec height = function  
     | Leaf -> 0
     | Node (_, left, right) -> 1 + max (height left) (height right)
+
+  let rec count= function 
+    | Leaf -> 0
+    | Node (_, left, right) -> 1 + count left + count right
 end
 
 let s = MyBST.empty
 let h = MyBST.height s
 let s = MyBST.insert 3 s
 let s = MyBST.insert 2 s
+let num = MyBST.count s
 let h = MyBST.height s
 let s = MyBST.insert 1 s
 let h = MyBST.height s
 let s = MyBST.insert 5 s
 let h = MyBST.height s
+let num = MyBST.count s
 let check = MyBST.mem 3 s
 let check = MyBST.mem 8 s

@@ -5,4 +5,5 @@ sig
     val mem : 'a -> 'a tree -> bool
     val insert : 'a -> 'a tree -> 'a tree
     val height : 'a tree -> int
+    val count : 'a tree -> int
 end
