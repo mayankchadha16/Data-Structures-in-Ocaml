@@ -53,3 +53,8 @@ Time complexity of Leftist heap ->
 | merge | O(log n)     |
 
 Leftist heap's merge complexity is better as compared to binary heap.
+
+---
+
+## Benchmarks ->
+Our implementation took ~2.6s to make a Heap from a list of 1 million random numbers and then deleting them one by one.
