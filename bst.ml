@@ -1,10 +1,11 @@
 module MyBST = struct
-  type 'a tree = Node of 'a * 'a tree * 'a tree | Leaf
+  type 'a tree = 
+  | Node of 'a * 'a tree * 'a tree 
+  | Leaf
 
   let empty =
     Leaf
 
-  (** [mem x t] is true iff [x] is a member of [t]. *)
   let rec mem x = function
     | Leaf -> false
     | Node (y, l, r) ->
@@ -12,7 +13,6 @@ module MyBST = struct
       else if x > y then mem x r
       else true
 
-  (** [insert x t] is [t] . *)    
   let rec insert x = function
     | Leaf -> Node (x, Leaf, Leaf) 
     | Node (y, l, r) as t -> 

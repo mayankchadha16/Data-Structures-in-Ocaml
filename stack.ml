@@ -4,7 +4,8 @@ module MyStack = struct
         | Empty
         | Entry of 'a * 'a stack
 
-    let empty = Empty
+    let empty 
+        = Empty
 
     let isempty = function
         | Empty -> true
@@ -28,9 +29,11 @@ end
 
 (* Make stack using List *)
 module ListStack = struct
-    type 'a stack = 'a list
+    type 'a stack 
+        = 'a list
 
-    let empty = []
+    let empty 
+        = []
 
     let isempty s = 
         s = []
