@@ -5,20 +5,19 @@ module MyBST = struct
 
   let empty =
     Leaf
-
+    
   let rec mem x = function
     | Leaf -> false
-    | Node (y, l, r) ->
-      if x < y then mem x l
-      else if x > y then mem x r
-      else true
+    | Node (y, left, right) ->
+      if x = y then true
+      else if x < y then mem x left
+      else mem x right
 
   let rec insert x = function
-    | Leaf -> Node (x, Leaf, Leaf) 
-    | Node (y, l, r) as t -> 
-      if x < y then Node (y, insert x l, r)
-      else if x > y then Node (y, l, insert x r)
-      else t
+    | Leaf -> Node (x, Leaf, Leaf)
+    | Node (y, left, right) when x < y -> Node (y, insert x left, right)
+    | Node (y, left, right) when x > y -> Node (y, left, insert x right)
+    | t -> t 
 
   let rec height = function  
     | Leaf -> 0
