@@ -21,3 +21,7 @@ sig
 end
 
 val suffixes : 'a list -> 'a list list
+
+val test_case_custom_stack : unit -> unit
+
+val test_case_list_stack : unit -> unit

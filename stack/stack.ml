@@ -59,30 +59,30 @@ let rec suffixes xs =
     | [] -> [[]]
     | x::xs' -> xs :: suffixes xs'  
 
-let s = MyStack.empty
-let check = MyStack.isempty
-let s = MyStack.push 1 s
-let s = MyStack.push 2 s
-let s = MyStack.push 3 s
-let s = MyStack.push 4 s
-let s = MyStack.push 1 s
-let x = MyStack.top s
-let s = MyStack.pop s
-let s = MyStack.pop s
-let s = MyStack.push 10 s
-let x = MyStack.top s
-let l = MyStack.size s
+let test_case_custom_stack () =
+    let s = MyStack.empty in
+    let s' = MyStack.push 1 s in
+    let s'' = MyStack.push 2 s' in
+    let s''' = MyStack.push 3 s'' in
+    let expected_top = 3 in
+    assert (MyStack.top s''' = expected_top);
+    let s'''' = MyStack.pop s''' in
+    let expected_top = 2 in
+    assert (MyStack.top s'''' = expected_top);
+    let expected_size = 2 in
+    assert (MyStack.size s'''' = expected_size);
+    print_endline "All test cases passed."
 
-let s = ListStack.empty
-let check = MyStack.isempty
-let s = ListStack.push 1 s
-let s = ListStack.push 2 s
-let s = ListStack.push 3 s
-let s = ListStack.push 4 s
-let s = ListStack.push 1 s
-let x = ListStack.top s
-let s = ListStack.pop s
-let s = ListStack.pop s
-let s = ListStack.push 10 s
-let x = ListStack.top s
-let l = ListStack.size s
+let test_case_list_stack () =
+    let s = ListStack.empty in
+    let s' = ListStack.push 1 s in
+    let s'' = ListStack.push 2 s' in
+    let s''' = ListStack.push 3 s'' in
+    let expected_top = 3 in
+    assert (ListStack.top s''' = expected_top);
+    let s'''' = ListStack.pop s''' in
+    let expected_top = 2 in
+    assert (ListStack.top s'''' = expected_top);
+    let expected_size = 2 in
+    assert (ListStack.size s'''' = expected_size);
+    print_endline "All test cases passed."
