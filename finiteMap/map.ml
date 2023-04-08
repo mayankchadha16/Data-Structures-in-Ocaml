@@ -3,13 +3,15 @@ struct
     type 'a key = 'a
     type 'a map = ('a * 'a) list
 
+    exception NotFound
+
     let empty = []
 
     let bind k v m =
         (k, v) :: m
 
     let rec lookup k = function
-        | [] -> None
+        | [] -> raise NotFound
         | (k', v) :: t ->
             if k = k' then Some v
             else lookup k t
@@ -23,5 +25,4 @@ let test_case () =
     assert (Map.lookup 1 map''' = Some "one");
     assert (Map.lookup 2 map''' = Some "two");
     assert (Map.lookup 3 map''' = Some "three");
-    assert (Map.lookup 4 map''' = None);
     print_endline "All test cases passed."
