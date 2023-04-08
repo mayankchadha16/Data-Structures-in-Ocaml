@@ -53,6 +53,12 @@ module ListStack = struct
         List.length s
 end
 
+(* Exercise 2.1 *)
+let rec suffixes xs =
+    match xs with
+    | [] -> [[]]
+    | x::xs' -> xs :: suffixes xs'  
+
 let s = MyStack.empty
 let check = MyStack.isempty
 let s = MyStack.push 1 s

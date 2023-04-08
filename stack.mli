@@ -19,3 +19,5 @@ sig
     val pop : 'a stack -> 'a stack
     val size : 'a stack -> int
 end
+
+val suffixes : 'a list -> 'a list list
