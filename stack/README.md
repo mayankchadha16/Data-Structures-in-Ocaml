@@ -7,12 +7,12 @@ The stack is defined as a variant type, which has two possible states: `Empty` a
 
 The functions supported by our modules:
 
-`empty` : `'a stack` : Returns an empty stack of type `'a`. This is simply a stack in the `Empty` state.
-`isempty` : `'a stack -> bool` : Returns `true` if the stack is empty, `false` otherwise. This is implemented by pattern matching the stack type to determine if it is in the `Empty` state.
-`push` : `'a -> 'a stack -> 'a stack` : Adds an element of type `'a` to the top of the stack and returns the new stack. This is done by constructing a new stack using the `Entry` constructor with the new element and the old stack.
-`top` : `'a stack -> 'a` : Returns the top element of the stack of type 'a. This is done by pattern matching the stack type to extract the top element from the `Entry` constructor.
-`pop` : `'a stack -> 'a stack` : Removes the top element from the stack and returns the new stack. This is done by pattern matching the stack type to extract the remaining stack from the `Entry` constructor.
-`size` : `'a stack -> int` : Returns the number of elements in the stack. This is done by recursively counting the elements in the stack, starting from the top.
+* `empty` : `'a stack` : Returns an empty stack of type `'a`. This is simply a stack in the `Empty` state.
+* `isempty` : `'a stack -> bool` : Returns `true` if the stack is empty, `false` otherwise. This is implemented by pattern matching the stack type to determine if it is in the `Empty` state.
+* `push` : `'a -> 'a stack -> 'a stack` : Adds an element of type `'a` to the top of the stack and returns the new stack. This is done by constructing a new stack using the `Entry` constructor with the new element and the old stack.
+* `top` : `'a stack -> 'a` : Returns the top element of the stack of type 'a. This is done by pattern matching the stack type to extract the top element from the `Entry` constructor.
+* `pop` : `'a stack -> 'a stack` : Removes the top element from the stack and returns the new stack. This is done by pattern matching the stack type to extract the remaining stack from the `Entry` constructor.
+* `size` : `'a stack -> int` : Returns the number of elements in the stack. This is done by recursively counting the elements in the stack, starting from the top.
 
 ## Custom Stack
 | Operation        | Complexity           |
