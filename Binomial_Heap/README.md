@@ -17,15 +17,13 @@ type 'a tree = Node of 'a * int * 'a tree list
 (* Binomial heap is a list of binomial trees *)
 type 'a heap = 'a tree list
 ```
-
-
 ## Time Complexity ->
 
 | Operation        | Leftist Heaps    | Binomial Heaps    |
 | -------------    |:-------------:| -------------:|
 | getMin           | O(1)        | O(log n)     |
-| deleteMin        | O(log n)    | O(log n), Amortised O(1)        |
-| insert           | O(log n)    | O(log n)        |
+| deleteMin        | O(log n)    | O(log n)      |
+| insert           | O(log n)    | O(log n), Amortised O(1)       |
 | merge 		   | O(log n)    | O(log n)        |
 
 ## To Do ->
