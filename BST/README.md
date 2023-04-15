@@ -56,5 +56,7 @@ We have added a new functionality called `complete (x, d)` which creates a compl
 
 Overall, these modifications have improved the performance, efficiency, and functionality of the code.
 
-
+# Problems in BST
+1. The main disadvantage is that we should always implement a balanced binary search tree. Otherwise the cost of operations may not be logarithmic and degenerate into a linear search on an array.
+2. They are not guaranteed to be balanced, which means that in the worst case, the height of the tree could be `O(n)` and the time complexity for operations could degrade to `O(n)`. 
 
