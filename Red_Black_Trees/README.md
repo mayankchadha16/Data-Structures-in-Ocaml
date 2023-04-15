@@ -109,5 +109,10 @@ In OCaml, a red-black tree implementation would likely be based on immutable dat
 
 In contrast, an imperative implementation of a red-black tree would involve modifying existing nodes to balance the tree. This approach is more closely aligned with imperative programming, which allows for mutable data structures and side effects.
 
----
+# Implementation's Conclusion
+* We compared the performance of Red-Black Trees and Binary Search Trees on two different datasets: one consisting of 1 million random numbers and the other consisting of a list of natural numbers up to 0.1 million.
+* On the dataset of 1 million random numbers, we found that Red-Black Trees took 4 seconds to insert each number, while Binary Search Trees took 2.9 seconds. This suggests that their performance on random datasets is comparable.
+* However, on the ordered dataset of natural numbers up to 0.1 million, Red-Black Trees outperformed Binary Search Trees significantly. Red-Black Trees took only 0.19 seconds to insert each number, while Binary Search Trees took 29 seconds. These results align with the theoretical expectations for these data structures.
+* We also tested the efficiency of searching for a number in each of the trees and observed similar effects.
+* Based on these results, we can conclude that Red-Black Trees are more efficient for datasets with ordered values, while Binary Search Trees may perform better for datasets with random values.
 
