@@ -35,25 +35,28 @@ The algorithm for this would be exactly same as the algorithm used in Binary Sea
 <br>
 
 ## Insert (Insert in the Red-Black Tree)
+**Possible Violations while insertion in Red-Black Trees.**
 
 <p align="center">
-    <img src="./Assets/Possible Violations.png" alt="Material Bread logo"> <figcaption align="center"> Possible Violations while insertion in Red-Black Trees</figcaption>
+    <img src="./Assets/Possible Violations.png" alt="Material Bread logo"> 
 </p>
 
 <br>
 
 <p align="center">
-  <img src="./Assets/1.png" width="150" height="180" hspace="10" vspace="10"/>
-  <img src="./Assets/2.png" width="150" height="180" hspace="10" vspace="10"/>
-  <img src="./Assets/3.png" width="150" height="180" hspace="10" vspace="10"/>
-  <img src="./Assets/4.png" width="150" height="180" hspace="10" vspace="10"/>
+  <img src="./Assets/1.png" width="444" height="650"/>
+  <img src="./Assets/2.png" width="444" height="650"/>
+  <img src="./Assets/3.png" width="444" height="650"/>
+  <img src="./Assets/4.png" width="444" height="650"/>
 </p>
 
 <br>
 
 <p align="center">
-    <img src="./Assets/5.png" alt="Material Bread logo"> <figcaption align="center"> All these violations when rectified rotate to</figcaption>
+    <img src="./Assets/5.png" width="895" height="608"/>
 </p>
+
+**All these violations when rectified rotate to the above figure.**
 
 <br>
 
