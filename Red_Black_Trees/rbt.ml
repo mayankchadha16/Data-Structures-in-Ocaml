@@ -37,15 +37,39 @@ struct
         match insert_aux x s with 
             | Leaf -> failwith "impossible"
             | Node (_, value, left, right) -> Node (Blk, value, left, right) (*Color root black*)
+
+    let rec gen ?(acc=[]) = function
+        | 0 -> acc
+        | size ->
+            let n = Random.int 1000000 in
+            gen ~acc:(n :: acc) (size - 1)
+
+    let time f x =
+        let t = Sys.time() in
+        let fx = f x in
+        Printf.printf "Execution time: %fs\n" (Sys.time() -. t);
+        fx
+
+    let fromOrdList lst =
+        let rec fromOrdListAux acc = function
+            | [] -> acc
+            | x :: xs ->
+            let tree = insert x acc in
+            fromOrdListAux tree xs
+        in
+        let tree = fromOrdListAux empty lst in
+        match tree with
+        | Leaf -> Leaf
+        | Node (_, value, left, right) -> Node (Blk, value, left, right)
+
+    let rec natural_numbers n =
+        if n = 0 then []
+        else n :: natural_numbers (n-1);;
     
 end
 
 let test_case () =
-    let rbt = Rbt.empty in
-    let rbt' = Rbt.insert 3 rbt in 
-    let rbt'' = Rbt.insert 2 rbt' in 
-    let rbt''' = Rbt.insert 4 rbt'' in 
-    let rbt'''' = Rbt.insert 1 rbt''' in
+    let rbt'''' = Rbt.fromOrdList [3; 2; 4; 1] in
     let check = Rbt.mem 1 rbt'''' in
     let check1 = Rbt.mem 4 rbt'''' in
     let check2 = Rbt.mem 3 rbt'''' in
@@ -55,3 +79,7 @@ let test_case () =
     assert (check2 = true);
     assert (check3 = false);
     print_endline "All test cases passed."
+
+(* let time = Rbt.time (Rbt.fromOrdList) (Rbt.gen 10000000) *)
+(* let time = Rbt.time (Rbt.fromOrdList) (Rbt.natural_numbers 100000) *)
+

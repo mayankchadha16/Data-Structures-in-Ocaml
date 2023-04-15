@@ -10,6 +10,10 @@ sig
     val height : 'a tree -> int
     val count : 'a tree -> int
     val complete : 'a -> int -> 'a tree
+    val insert_list : 'a list -> 'a tree
+    val gen : ?acc:int list -> int -> int list
+    val time : ('a -> 'b) -> 'a -> 'b
+    val natural_numbers : int -> int list
 end
 
 val test_case : unit -> unit

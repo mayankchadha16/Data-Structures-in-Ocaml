@@ -61,7 +61,25 @@ module MyBST = struct
     else
       let sub = complete x (d - 1) in
       Node (x, sub, sub)
-      
+
+  let insert_list lst =
+    List.fold_left (fun acc x -> insert x acc) empty lst
+
+  let rec gen ?(acc=[]) = function
+    | 0 -> acc
+    | size ->
+        let n = Random.int 1000000 in
+        gen ~acc:(n :: acc) (size - 1)
+
+  let time f x =
+      let t = Sys.time() in
+      let fx = f x in
+      Printf.printf "Execution time: %fs\n" (Sys.time() -. t);
+      fx
+
+  let rec natural_numbers n =
+    if n = 0 then []
+    else n :: natural_numbers (n-1);;
 end
 
 let test_case () =
@@ -78,3 +96,5 @@ let test_case () =
   assert (MyBST.member_opt 3 bst''' = true);
   assert (MyBST.member_opt 8 bst''' = false);
   print_endline "All test cases passed."
+
+(* let time = MyBST.time (MyBST.insert_list) (MyBST.natural_numbers 100000) *)

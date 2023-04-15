@@ -7,6 +7,9 @@ sig
     val rotate : color * 'a * 'a tree * 'a tree -> 'a tree
     val insert_aux : 'a -> 'a tree -> 'a tree
     val insert : 'a -> 'a tree -> 'a tree
+    val gen : ?acc:int list -> int -> int list
+    val time : ('a -> 'b) -> 'a -> 'b
+    val fromOrdList : 'a list -> 'a tree
 end
 
 val test_case : unit -> unit
