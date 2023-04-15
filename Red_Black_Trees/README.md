@@ -1,0 +1,107 @@
+# Red-Black Trees
+We introduced binary search trees in our previous discussions. Although these trees work very well on random or unordered data, they perform very poorly on ordered data, for which any individual operation might take up to `O(n)` time. The solution to this problem is to keep each tree approximately balanced. Then no individual operation takes more than `O(logn)` time.
+
+A Red-Black Tree is a Binary Search Tree with:
+* Each node colored red or black.
+* Leaves and Root colored black.
+
+# Properties
+We insist that every red-black tree satisfy the following balance invariants:
+* BST
+* <span style="color:#3498eb">Local invariant:</span> No red node has a red child.
+* <span style="color:#3498eb">Global invariant:</span> Every path from the root to a leaf has the same number of black nodes.
+<br>
+
+## Path Length
+
+* **Lemma**: the length of the longest path in a red-black tree is at most twice length of the shortest path.
+    * Eg: B-B-B-B vs. B-<span style="color:red">R</span>-B-<span style="color:red">R</span>-B-<span style="color:red">R</span>-B-<span style="color:red">R</span>
+* **Theorem:** the maximum depth of a node in a red-black tree of size n is at most `2[log(n+1)]`.
+* So red-black trees are balanced.
+* and operations generally run in `O(logn)` time.
+<br>
+
+## Member (Search in the Red-Black Tree)
+The algorithm for this would be exactly same as the algorithm used in Binary Search Tree since the only point of difference between Balanced BSTs and BSTs is their way of insertion.
+
+```Ocaml
+    let rec mem x = function
+    | Leaf -> false
+    | Node (_, left, value, right) ->
+        if x = value then true
+        else if x < value then mem x left
+        else mem x right
+```
+<br>
+
+## Insert (Insert in the Red-Black Tree)
+
+<p align="center">
+    <img src="./Assets/Possible Violations.png" alt="Material Bread logo"> <figcaption align="center"> Possible Violations while insertion in Red-Black Trees</figcaption>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="./Assets/1.png" width="150" height="180" hspace="10" vspace="10"/>
+  <img src="./Assets/2.png" width="150" height="180" hspace="10" vspace="10"/>
+  <img src="./Assets/3.png" width="150" height="180" hspace="10" vspace="10"/>
+  <img src="./Assets/4.png" width="150" height="180" hspace="10" vspace="10"/>
+</p>
+
+<br>
+
+<p align="center">
+    <img src="./Assets/5.png" alt="Material Bread logo"> <figcaption align="center"> All these violations when rectified rotate to</figcaption>
+</p>
+
+<br>
+
+Okasaki highlighted the problem of insertion here and gave the suggestion to the address the problem by:
+* Always maintaining BST + Global Invariant.
+* Maybe violate then restore Local Invariant:
+    * Make new node Red
+    * Recurse back up tree 
+        * On the way, look at the two nodes immediately beneath current node
+        * Rotate nodes to balance tree restore Local Invariant.
+    * At the top, make the root black
+        * Might increase the black height by 1
+    
+
+```Ocaml
+    (*You cannot find such compact function for balancing in any imperative language*)
+    let rotate = function
+        | Blk, z, Node (Red, y, Node (Red, x, a, b), c), d
+        | Blk, z, Node (Red, x, a, Node (Red, y, b, c)), d
+        | Blk, x, a, Node (Red, z, Node (Red, y, b, c), d)
+        | Blk, x, a, Node (Red, y, b, Node (Red, z, c, d)) 
+        -> Node (Red, y, Node (Blk, x, a, b), Node (Blk, z, c, d))
+        | t -> Node t
+
+    let rec insert_aux x = function
+        | Leaf -> Node (Red, x, Leaf, Leaf) (*Color the new node red*)
+        | Node (c, value, left, right) as n ->
+            if x < value then rotate (c, value, insert_aux x left, right)
+            else if x > value then rotate (c, value, left, insert_aux x right)
+            else n
+
+    let rec insert x s = 
+        match insert_aux x s with 
+            | Leaf -> failwith "impossible"
+            | Node (_, value, left, right) -> Node (Blk, value, left, right) (*Color root black*)
+```
+<br>
+
+## Complexity
+
+Will be same for any tree whether staggered, balanced or unbalanced.
+| Operation        | Time Complexity           |
+| ------------- |:-------------:|
+| insert    | O(log n) |
+| member      | O(log n)    |
+<br>
+
+# Red-Black Tree Implementation: Functional vs. Imperative Programming
+In OCaml, a red-black tree implementation would likely be based on immutable data structures, which means that the tree would be constructed by creating new nodes rather than modifying existing ones. This can be a more natural fit for the functional programming paradigm, which emphasizes immutability and avoiding side effects.
+
+In contrast, an imperative implementation of a red-black tree would involve modifying existing nodes to balance the tree. This approach is more closely aligned with imperative programming, which allows for mutable data structures and side effects.
