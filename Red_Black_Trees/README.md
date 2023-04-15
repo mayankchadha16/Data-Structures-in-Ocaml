@@ -35,25 +35,28 @@ The algorithm for this would be exactly same as the algorithm used in Binary Sea
 <br>
 
 ## Insert (Insert in the Red-Black Tree)
+**Possible Violations while insertion in Red-Black Trees.**
 
 <p align="center">
-    <img src="./Assets/Possible Violations.png" alt="Material Bread logo"> <figcaption align="center"> Possible Violations while insertion in Red-Black Trees</figcaption>
+    <img src="./Assets/Possible Violations.png" alt="Material Bread logo"> 
 </p>
 
 <br>
 
 <p align="center">
-  <img src="./Assets/1.png" width="150" height="180" hspace="10" vspace="10"/>
-  <img src="./Assets/2.png" width="150" height="180" hspace="10" vspace="10"/>
-  <img src="./Assets/3.png" width="150" height="180" hspace="10" vspace="10"/>
-  <img src="./Assets/4.png" width="150" height="180" hspace="10" vspace="10"/>
+  <img src="./Assets/1.png" width="444" height="650"/>
+  <img src="./Assets/2.png" width="444" height="650"/>
+  <img src="./Assets/3.png" width="444" height="650"/>
+  <img src="./Assets/4.png" width="444" height="650"/>
 </p>
 
 <br>
 
 <p align="center">
-    <img src="./Assets/5.png" alt="Material Bread logo"> <figcaption align="center"> All these violations when rectified rotate to</figcaption>
+    <img src="./Assets/5.png" width="895" height="608"/>
 </p>
+
+**All these violations when rectified rotate to the above figure.**
 
 <br>
 
@@ -105,3 +108,6 @@ Will be same for any tree whether staggered, balanced or unbalanced.
 In OCaml, a red-black tree implementation would likely be based on immutable data structures, which means that the tree would be constructed by creating new nodes rather than modifying existing ones. This can be a more natural fit for the functional programming paradigm, which emphasizes immutability and avoiding side effects.
 
 In contrast, an imperative implementation of a red-black tree would involve modifying existing nodes to balance the tree. This approach is more closely aligned with imperative programming, which allows for mutable data structures and side effects.
+
+---
+
