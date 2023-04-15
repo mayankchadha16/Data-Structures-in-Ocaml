@@ -108,3 +108,6 @@ Will be same for any tree whether staggered, balanced or unbalanced.
 In OCaml, a red-black tree implementation would likely be based on immutable data structures, which means that the tree would be constructed by creating new nodes rather than modifying existing ones. This can be a more natural fit for the functional programming paradigm, which emphasizes immutability and avoiding side effects.
 
 In contrast, an imperative implementation of a red-black tree would involve modifying existing nodes to balance the tree. This approach is more closely aligned with imperative programming, which allows for mutable data structures and side effects.
+
+---
+
