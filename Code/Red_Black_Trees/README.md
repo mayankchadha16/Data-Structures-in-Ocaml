@@ -18,7 +18,7 @@ We introduced binary search trees in our previous discussions. Although these tr
 
 A Red-Black Tree is a Binary Search Tree with:
 * Each node colored red or black.
-* Leaves and Root colored black.
+* Root colored black.
 
 <div id='section-id-8'/>
 
