@@ -9,6 +9,7 @@ sig
         mutable front : 'a node option;
         mutable back : 'a node option;
     }
+    exception Empty
     val empty : int t
     val is_empty : 'a t -> bool
     val push_front : 'a t -> 'a -> unit

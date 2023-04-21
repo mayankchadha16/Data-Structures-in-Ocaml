@@ -2,6 +2,8 @@ module Deque = struct
   type 'a node = { value: 'a; mutable prev: 'a node option; mutable next: 'a node option }
   type 'a t = { mutable front: 'a node option; mutable back: 'a node option }
 
+  exception Empty
+
   let empty  = { front = None; back = None }
 
   let is_empty deque =
@@ -29,7 +31,7 @@ module Deque = struct
 
   let pop_front deque =
     match deque.front with
-    | None -> None
+    | None -> raise Empty
     | Some front_node ->
         let value = front_node.value in
         (match front_node.next with
@@ -43,7 +45,7 @@ module Deque = struct
 
   let pop_back deque =
     match deque.back with
-    | None -> None
+    | None -> raise Empty
     | Some back_node ->
         let value = back_node.value in
         (match back_node.prev with
@@ -57,12 +59,12 @@ module Deque = struct
 
   let front deque =
     match deque.front with
-    | None -> None
+    | None -> raise Empty
     | Some front_node -> Some front_node.value
 
   let back deque =
     match deque.back with
-    | None -> None
+    | None -> raise Empty
     | Some back_node -> Some back_node.value
 end
 
@@ -85,7 +87,6 @@ let test_case () =
   assert (Deque.back dq = Some 1);
 
   assert (Deque.pop_front dq = Some 1);
-  assert (Deque.pop_front dq = None);
   assert (Deque.is_empty dq);
 
   print_endline "All test cases passed."
