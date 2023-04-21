@@ -29,11 +29,12 @@ Lazy evaluation, on the other hand, delays the evaluation of expressions until t
 
 ## Data Structures Implemented So Far
 1. [Stack](Code/Stack/)
-2. [BST](Code/BST/)
-3. [Finite_Map](Code/Finite_Map)
-4. [Leftist_Heap](Code/Leftist_Heap/)
-5. [Binomial_Heap](Code/Binomial_Heap/)
-6. [Red_Black_Trees](Code/Red_Black_Trees/)
+2. [Binary Search Trees](Code/BST/)
+3. [Finite Map](Code/Finite_Map)
+4. [Leftist Heap](Code/Leftist_Heap/)
+5. [Binomial Heap](Code/Binomial_Heap/)
+6. [Red-Black Trees](Code/Red_Black_Trees/)
+7. [Deque](Code/Deque/)
 
 [^1]: Functional data structures are persistent because they are designed to be immutable, meaning that any operation that modifies the data structure creates a new version of it while leaving the original version intact. This allows for all previous versions to be accessible even after new versions have been created, making them persistent. In contrast, ephemeral data structures are mutable and do not retain previous versions.
 
