@@ -18,7 +18,8 @@ The functions supported by our modules:
 * ``front`` function returns the value at the front of the deque, or None if the deque is empty.
 * ``back`` function is similar to ``front``, but returns the value at the back of the deque instead.
 
-## Custom Stack
+<br>
+
 | Operation        | Complexity           |
 | ------------- |:-------------:|
 | push_front     | O(1) |
