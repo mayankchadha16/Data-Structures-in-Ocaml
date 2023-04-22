@@ -5,7 +5,24 @@ The deque is implemented using a doubly-linked list of nodes, where each node co
 
 The `node` type is defined as a record with three fields: `value` of type `'a`, `prev` of type ``'a node option``, and ``next`` of type ``'a node option``. The ``prev`` and ``next`` fields are both mutable, so that they can be updated as nodes are added to or removed from the deque.
 
+```Ocaml
+type 'a node = 
+{ 
+    value: 'a; 
+    mutable prev: 'a node option; 
+    mutable next: 'a node option;
+}
+```
+
 The ``t`` type is defined as a record with two fields: ``front`` of type ``'a node option``, and ``back`` of type ``'a node option``. These fields are also mutable, and represent the front and back of the deque respectively.
+
+```Ocaml
+type 'a t = 
+{ 
+    mutable front: 'a node option; 
+    mutable back: 'a node option;
+}
+```
 
 The functions supported by our modules:
 
