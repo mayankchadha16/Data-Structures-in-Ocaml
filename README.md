@@ -36,6 +36,12 @@ Lazy evaluation, on the other hand, delays the evaluation of expressions until t
 6. [Red-Black Trees](Code/Red_Black_Trees/)
 7. [Deque](Code/Deque/)
 
+## Resources and References 
+1. [Purely Functional Data Structures by Chris Okasaki](https://www.amazon.in/Purely-Functional-Structures-Chris-Okasaki/dp/0521663504)
+2. [Functional Programming in OCaml](https://courses.cs.cornell.edu/cs3110/2021sp/textbook/)
+3. [Amortization, Lazy Evaluation and persistence](https://ieeexplore.ieee.org/document/492666)
+4. [TypeOCaml](http://typeocaml.com/2015/03/12/heap-leftist-tree/)
+
 [^1]: Functional data structures are persistent because they are designed to be immutable, meaning that any operation that modifies the data structure creates a new version of it while leaving the original version intact. This allows for all previous versions to be accessible even after new versions have been created, making them persistent. In contrast, ephemeral data structures are mutable and do not retain previous versions.
 
 
