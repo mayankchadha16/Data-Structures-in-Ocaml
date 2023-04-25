@@ -66,8 +66,8 @@ To delete the minimum element,
 | Operation        | Leftist Heaps    | Binomial Heaps    |
 | -------------    |:-------------:| -------------:|
 | getMin           | O(1)        | O(log n)     |
-| deleteMin        | O(log n)    | O(log n), Amortized O(1)     |
-| insert           | O(log n)    | O(log n)      |
+| deleteMin        | O(log n)    | O(log n)     |
+| insert           | O(log n)    | O(log n), Amortized O(1)      |
 | merge 		   | O(log n)    | O(log n)        |
 
 # Improvements 
