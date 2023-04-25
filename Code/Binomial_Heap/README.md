@@ -81,6 +81,9 @@ type 'a heap = 'a option * 'a tree list
 
 V2 contains the code with updated insert, merge and delete functions. getMin is now O(1).
 
+## Benchmarks
+Even though theoretially binomial heaps are as fast as leftist heaps, in our benchmarks it was approximately 2 times slower than leftist heaps. More specifically, we found that the deleteMin operation in binomial heaps is apparently constant times slower than that of leftist heaps. However, insert operation is faster than leftist heaps as we will see below. 
+
 # Amortized Analysis
 
 The intuition behind amortized analysis is that sometimes, we may be interested in knowing the running time of a sequence of operations. We may not care if a few operations in a sequence run in `O(log n)` or even `O(n)` time, provided that the overall cost of the sequence is `O(n)`. So, amortization allows us to measure the performance of a data structure over a sequence of operations, rather than just a single operation.
